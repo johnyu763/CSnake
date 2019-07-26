@@ -18,4 +18,4 @@ void rand_coor();
 void get_dir(Node* head, char dir);
 void remove_last(Node* head);
 
-#endif
+#endif  
