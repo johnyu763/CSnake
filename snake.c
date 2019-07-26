@@ -99,3 +99,4 @@ void remove_last(Node* head){
   free(temp->next);
   temp->next=NULL;
 }
+ 
