@@ -9,13 +9,12 @@ typedef struct Node{
 }Node;
 
 void free_ll(Node* head);
-void push(Node** head, int x, int y);
 void refresh_win(Node* head);
-void append(Node** head,int x,int y);
+void push(Node** head,int x,int y);
 int next_x(Node* head);
 int next_y(Node* head);
 void rand_coor();
-void get_dir(Node* head, char dir);
+void get_dir(char dir);
 void remove_last(Node* head);
-
+bool check_collide(Node* head, int length, int x, int y);
 #endif

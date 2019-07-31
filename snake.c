@@ -38,39 +38,31 @@ void push(Node** head, int x,int y){
   }
   *head=new_node;
 }
-void append(Node** head,int x,int y){
-  Node* new_node=(Node*)malloc(sizeof(Node));
-  Node* last=*head;
-  new_node->x=x;
-  new_node->y=y;
-  if(*head==NULL){
-    *head=new_node;
-    return;
-  }
-  while(last->next!=NULL){
-    last=last->next;
-  }
-  last->next=new_node;
-  last=last->next;
-  return;
-}
-void get_dir(Node* head, char dir){
+void get_dir(char dir){
   switch(dir){
     case 'w':
-      y_dir=-1;
-      x_dir=0;
+      if(x_dir){
+        y_dir=-1;
+        x_dir=0;
+      }
       break;
     case 'a':
-      x_dir=-1;
-      y_dir=0;
+      if(y_dir){
+        x_dir=-1;
+        y_dir=0;
+      }
       break;
     case 's':
-      y_dir=1;
-      x_dir=0;
+      if(x_dir){
+        y_dir=1;
+        x_dir=0;
+      }
       break;
     case 'd':
-      x_dir=1;
-      y_dir=0;
+      if(y_dir){
+        x_dir=1;
+        y_dir=0;
+      }
       break;
     default:
       x_dir=x_dir;
@@ -98,4 +90,19 @@ void remove_last(Node* head){
   }
   free(temp->next);
   temp->next=NULL;
+}
+bool check_collide(Node* head, int length,int x, int y){
+  if(length<4){
+    return false;
+  }
+
+  Node* temp=head->next->next->next;
+  while(temp!=NULL){
+    if(x==temp->x&&y==temp->y){
+      return true;
+    }
+    temp=temp->next;
+  }
+
+  return false;
 }
