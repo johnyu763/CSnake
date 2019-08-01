@@ -1,2 +1,2 @@
-#CSnake
-This is a snake game written in C using ncurses.
+# CSnake
+This is a snake game made in C, using ncurses.
