@@ -106,3 +106,4 @@ bool check_collide(Node* head, int length,int x, int y){
 
   return false;
 }
+

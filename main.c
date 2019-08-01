@@ -48,4 +48,3 @@ int main(){
   free_ll(head);
   return 0;
 }
-
